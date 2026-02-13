@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+networkx
+pydantic
+python-dotenv
+osmnx
+networkx
