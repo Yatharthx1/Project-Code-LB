@@ -7,13 +7,17 @@ if __name__ == "__main__":
 
     print("Step 2: Defining coordinates...")
 
+    origin_name = "Vijay Nagar, Indore , India"
+    destination_name = "Bengali Square , Indore , India"
     # Vijay Nagar
-    origin_lat = 22.7533
-    origin_lon = 75.8937
+    #origin_lat, origin_lon = ox.geocode(origin_name)
+    origin_lat, origin_lon = 22.77972, 75.95210
+    
 
     # Bengali Square
-    dest_lat = 22.7440
-    dest_lon = 75.9050
+    # dest_lat , dest_lon = ox.geocode(destination_name)
+    dest_lat , dest_lon = 22.65597, 75.82316
+     
 
     print("Step 3: Finding nearest nodes...")
 
@@ -22,7 +26,8 @@ if __name__ == "__main__":
 
     print("Origin node:", origin_node)
     print("Destination node:", dest_node)
-
+    print("Origin Lat , lon:",origin_lat,origin_lon)
+    print("Dest Lat , lon:",dest_lat,dest_lon)
     print("Step 4: Computing shortest path...")
 
     route = ox.shortest_path(G, origin_node, dest_node, weight="base_time")
@@ -45,3 +50,4 @@ for i in range(len(route) - 1):
 
 print(f"Total distance (km): {total_distance / 1000:.2f}")
 print(f"Estimated travel time (min): {total_time:.2f}")
+ox.plot_graph(G)

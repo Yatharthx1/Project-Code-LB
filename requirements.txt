@@ -5,3 +5,5 @@ pydantic
 python-dotenv
 osmnx
 networkx
+matplotlibpip 
+folium
